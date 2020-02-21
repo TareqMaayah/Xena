@@ -1,0 +1,95 @@
+//Simulate a circuit for controlling a hallway light that has switches at both ends of the hallway.
+// Each switch can be up or down, and the light can be on or off. Toggling either switch turns the lamp on or off.  
+//
+
+public class Circuit {
+    
+    public static void main(String[] args)
+    {
+        System.out.println("Tareq");
+        Circuit hallway = new Circuit();
+        System.out.println(hallway.getFirstSwitchState());
+        System.out.println(hallway.getSecondSwitchState());
+        System.out.println(hallway.getLampState());
+        hallway.toggleFirstSwitch();
+        System.out.println(hallway.getFirstSwitchState());
+        System.out.println(hallway.getSecondSwitchState());
+        System.out.println(hallway.getLampState());
+        hallway.toggleSecondSwitch();
+        hallway.toggleSecondSwitch();
+        System.out.println(hallway.getFirstSwitchState());
+        System.out.println(hallway.getSecondSwitchState());
+        System.out.println(hallway.getLampState());
+    }
+    
+    private int firstSwitch;      // 0 for down, 1 for up
+    private int secondSwitch;     // 0 for down, 1 for up
+    private int lampState;        // 0 for off, 1 for on
+    private String[] states = {"off", "on"};
+    public Circuit(){
+        firstSwitch = 0;
+        secondSwitch = 0;
+        lampState = 0;
+    }
+   
+    public int getFirstSwitchState(){
+        return firstSwitch;
+    }   
+    
+    public int getSecondSwitchState(){
+        return secondSwitch;
+    }  
+   
+    public int getLampState(){
+        return lampState;
+    }   
+   
+    public void toggleFirstSwitch(){
+        System.out.println("We turned the first switch from " + states[firstSwitch] + 
+                         " to " + states[1-firstSwitch] + 
+                         " thus turning the lamp state from " + states[lampState] + " to " + states[1 - lampState]);
+        firstSwitch = 1 - firstSwitch;
+        lampState = 1 - lampState;
+    }  
+   
+    public void toggleSecondSwitch(){
+        System.out.println("We turned the second switch from " + states[secondSwitch] + 
+                         " to " + states[1-secondSwitch] + 
+                         " thus turning the lamp state from " + states[lampState] + " to " + states[1 - lampState]);
+        secondSwitch = 1 - secondSwitch;
+        lampState = 1 - lampState;
+    }  
+}
+
+/*
+public class HelloWorld{
+
+     public static void main(String []args){
+        System.out.println("Hello World");
+        
+        
+        for (int i=1; i < 10; i++) System.out.print(i+" ");
+        System.out.println("");
+
+        for (int i=1; i < 10; i+=2) System.out.print(i+" ");
+        System.out.println("");
+
+        for (int i=10; i > 1; i--) System.out.print(i+" ");
+        System.out.println("");
+        
+        for (int i=0; i < 10; i++) System.out.print(i+" ");
+        System.out.println("");
+
+        for (int i=1; i < 10; i=i*2) System.out.print(i+"");
+        System.out.println("");
+        
+        for (int i=1; i < 10; i++){
+            if (i%2==0){
+                System.out.print(i+"");
+            }
+        }
+        System.out.println("");
+        
+        
+     }
+}
